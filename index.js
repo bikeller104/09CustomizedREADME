@@ -67,6 +67,11 @@ const questions = [
 		message:'What license does the project use',
 		choices: ['Apache', 'MIT', 'GPL'],
 	},
+	{	name:'licenseColor',
+		type:'list',
+		message:'Choose a color for the license badge',
+		choices:['brightgreen', 'green', 'yellowgreen', 'yellow','orange','red','blue','lightgrey','blueviolet']
+	},
 	{	name:'gitHubUserName',
 		type:'input',
 		message:'What is your github username',		
