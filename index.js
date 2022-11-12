@@ -23,6 +23,7 @@ what data do I need for my readme?
 
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const fs = require("fs");
 
 function ReadMeData(title, description, installationInstructions, usageInformation, contributionGuidelines, testInstructions, licenseName, gitHubUserName, email)
 {
@@ -91,6 +92,10 @@ function init(){
 	{
 		let data = generateMarkdown(responses);
 		console.log(data);
+		fs.writeFile('./output/README.md', data, (err) =>
+		{
+			console.log(err?err:"data writen to file");
+		});
 		// console.log(responses);
 	});
 }
