@@ -12,24 +12,33 @@
 
 	function renderLicenseSection(license, color){
 		let licenseSection = 
-		`[![License](https://img.shields.io/badge/License-${license}-${color}.svg)](${licenseInfo[license]});`
-
+		`[![License](https://img.shields.io/badge/License-${license}-${color}.svg)](${licenseInfo[license]})`;
+		return licenseSection;
 	}
 	
 	function generateMarkdown(data){
 
 		markdown =  
-`#${data.title}
+`# ${data.title}
 
 ## Badges & License
+${renderLicenseSection(data.licenseName, data.licenseColor)}
+
+## Table of Contents
+
+- [Project Description](#project-description)
+- [Visuals](#visuals)
+- [Installation Instructions](#installation-instructions)
+- [Usage Instructions](#usage-instructions)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Testing Procedure](#testing-procedure)
+- [Contact & Questions](#contact--questions)
 
 ## Project Description
 ${data.description}
 
 ## Visuals
 
-## Badges
-${renderLicenseSection(data.licenseName, data.licenseColor)}
 
 ## Installation Instructions
 ${data.installationInstructions}
